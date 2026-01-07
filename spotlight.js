@@ -208,5 +208,8 @@ document.addEventListener('DOMContentLoaded', () => {
       updateSpotlightSelection();
     }
   });
+
+  // Open spotlight on page load
+  openSpotlight();
 });
 
