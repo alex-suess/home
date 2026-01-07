@@ -189,6 +189,7 @@ const links = [
           { title: "YouTube", url: "https://youtube.com", description: "Videos" },
           { title: "Makerworld", url: "https://makerworld.de", description: "Makerworld" },
           { title: "My Dealz", url: "https://my-dealz.de", description: "My Dealz" },
+          { title: "tm.de", url: "https://tm.de", description: "Transfermarkt News" },
         ]
       },
       // Homelab
