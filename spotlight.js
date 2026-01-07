@@ -78,6 +78,7 @@ function renderSpotlightResults(query) {
         No links found for "<strong>${escapeHtml(query)}</strong>"
       </div>
       <div class="spotlight-hint">
+        <span><kbd>Enter</kbd> search on Ecosia</span>
         <span><kbd>Esc</kbd> to close</span>
       </div>
     `;
@@ -139,6 +140,13 @@ function navigateSpotlightResult() {
     const link = spotlightResults[spotlightSelectedIndex];
     window.open(link.url, '_blank');
     closeSpotlight();
+  } else {
+    // No results - search on Ecosia
+    const query = document.getElementById('spotlight-input').value.trim();
+    if (query) {
+      window.open(`https://www.ecosia.org/search?q=${encodeURIComponent(query)}`, '_blank');
+      closeSpotlight();
+    }
   }
 }
 
