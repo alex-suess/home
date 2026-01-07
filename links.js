@@ -198,6 +198,8 @@ const links = [
           { title: "Proxmox", url: "http://server.dahoam:8006", description: "Proxmox Dashboard" },
           { title: "Nextcloud", url: "http://cloud.dahoam", description: "Nextcloud Dashboard" },
           { title: "Immich", url: "http://fotos.dahoam", description: "Immich Foto Gallery" },
+          { title: "Booklore", url: "http://books.dahoam", description: "Booklore Library" },
+          { title: "Jellyfin", url: "http://media.dahoam", description: "Jellyfin Media Library" },
         ]
       }
   ];
