@@ -59,7 +59,9 @@ const links = [
           { title: "Regex101", url: "https://regex101.com", description: "Regex Tester" },
           { title: "Regex Generator", url: "https://regexr.com", description: "Regex Generator" },
           { title: "Browserstack", url: "https://www.browserstack.com", description: "Browserstack - Test your website in different browsers" },
-          { title: "draw.io", url: "https://app.diagrams.net/", description: "draw.io - Draw diagrams" }
+          { title: "draw.io", url: "https://app.diagrams.net/", description: "draw.io - Draw diagrams" },
+          { title: "Heroicons", url: "https://heroicons.dev/", description: "Heroicons - Icon Library" },
+          { title: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - Free images" },
         ]
     },
     // News & Reading
@@ -187,7 +189,7 @@ const links = [
           { title: "LinkedIn", url: "https://linkedin.com", description: "Professional network" },
           { title: "Reddit", url: "https://reddit.com", description: "Communities" },
           { title: "YouTube", url: "https://youtube.com", description: "Videos" },
-          { title: "Makerworld", url: "https://makerworld.de", description: "Makerworld" },
+          { title: "Makerworld", url: "https://makerworld.com", description: "Makerworld" },
           { title: "My Dealz", url: "https://my-dealz.de", description: "My Dealz" },
           { title: "tm.de", url: "https://tm.de", description: "Transfermarkt News" },
         ]
