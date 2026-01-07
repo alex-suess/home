@@ -186,7 +186,9 @@ const links = [
           { title: "Twitter / X", url: "https://x.com", description: "Microblogging" },
           { title: "LinkedIn", url: "https://linkedin.com", description: "Professional network" },
           { title: "Reddit", url: "https://reddit.com", description: "Communities" },
-          { title: "YouTube", url: "https://youtube.com", description: "Videos" }
+          { title: "YouTube", url: "https://youtube.com", description: "Videos" },
+          { title: "Makerworld", url: "https://makerworld.de", description: "Makerworld" },
+          { title: "My Dealz", url: "https://my-dealz.de", description: "My Dealz" },
         ]
       },
       // Homelab
