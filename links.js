@@ -5,6 +5,7 @@ const links = [
       items: [
         { title: "Deskbird", url: "https://app.deskbird.com/", description: "Deskbird - Desk Booking System", icon: "./img/favicon-deskbird.ico"},
         { title: "Personio", url: "https://dgtls.app.personio.com/", description: "Personio - HR System"},
+        { title: "Timetree Kalender", url: "https://timetreeapp.com", description: "Timetree Kalender"},
       ],
       subcategories: [
         {
