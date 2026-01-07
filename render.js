@@ -50,7 +50,7 @@ function getFaviconUrl(url, customIcon) {
     header.textContent = subcategory.name;
     
     const grid = document.createElement('div');
-    grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4';
+    grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4';
     
     (subcategory.items || []).forEach((link, linkIndex) => {
       grid.appendChild(createLinkCard(link, linkIndex + subcategoryIndex * 3));
@@ -76,7 +76,7 @@ function getFaviconUrl(url, customIcon) {
     // Render direct items if present
     if (category.items && category.items.length > 0) {
       const grid = document.createElement('div');
-      grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4';
+      grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4';
       
       category.items.forEach((link, linkIndex) => {
         grid.appendChild(createLinkCard(link, linkIndex));

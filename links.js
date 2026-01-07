@@ -18,7 +18,10 @@ const links = [
         {
             name: "Confluence",
             items: [
-                { title: "Confluence", url: "https://dgtls.atlassian.net/wiki/home", description: "Documentation", icon: "./img/favicon-valantic.ico"},
+                { title: "Confluence Home", url: "https://dgtls.atlassian.net/wiki/home", description: "Confluence Home", icon: "./img/favicon-valantic.ico"},
+                { title: "My Space", url: "https://dgtls.atlassian.net/wiki/spaces/~712020577778bf0fce4e0aab5d980d98be4e60/overview", description: "My Space", icon: "./img/favicon-valantic.ico"},
+                { title: "CL Development", url: "https://dgtls.atlassian.net/wiki/spaces/CLD/overview", description: "Chapter Lead Development Space", icon: "./img/favicon-valantic.ico"},
+                { title: "HR for Leads", url: "https://dgtls.atlassian.net/wiki/spaces/HFL/overview?homepageId=1748992108", description: "HR for Leads Space", icon: "./img/favicon-valantic.ico"},
             ]
         },
         {
@@ -68,5 +71,36 @@ const links = [
         { title: "The Verge", url: "https://theverge.com", description: "Tech & culture" },
         { title: "Medium", url: "https://medium.com", description: "Articles" }
       ]
+    },
+    {
+        category: "Funke Medien Gruppe",
+        subcategories: [
+            {
+                name: "Production",
+                items: [
+                    { title: "Hoerzu Frontend", url: "https://hoerzu.de", description: "Hoerzu Prod Frontend"},
+                    { title: "Hoerzu Frontend (No CDN)", url: "https://redaktion.hoerzu.de", description: "Hoerzu Prod Frontend (No CDN)"},
+                    { title: "Hoerzu Backend", url: "https://redaktion.hoerzu.de/admin/login", description: "Hoerzu Prod Admin Backend", icon: "./img/favicon-pimcore.png"},
+                    { title: "TVD Frontend", url: "https://www.tvdigital.de/", description: "TVD Prod Frontend"},
+                    { title: "TVD Frontend (No CDN)", url: "https://redaktion.tvdigital.de/", description: "TVD Prod Frontend (No CDN)"},
+                ]
+            },
+            {
+                name: "Staging",
+                items: [
+                    { title: "Hoerzu Frontend", url: "https://hzdevpimcore11.dcmdev.de/", description: "Hoerzu Staging Frontend"},
+                    { title: "Hoerzu Backend", url: "https://redaktion.hoerzu.de/admin/login", description: "Hoerzu Staging Admin Backend", icon: "./img/favicon-pimcore.png"},
+                    { title: "TVD Frontend", url: "https://devredaktion11.tvdigital.de/", description: "TVD Staging Frontend"},
+                ]
+            }, 
+            {
+                name: "Development",
+                items: [
+                    { title: "Hoerzu Frontend", url: "https://hoerzu-update.dgtls", description: "Hoerzu Development Frontend"},
+                    { title: "Hoerzu Backend", url: "https://hoerzu-update.dgtls/admin/login", description: "Hoerzu Development Admin Backend", icon: "./img/favicon-pimcore.png"},
+                    { title: "TVD Frontend", url: " https://tvdigital.dgtls", description: "TVD Development Frontend"}
+                ]
+            }
+        ]
     }
   ];
