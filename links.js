@@ -1,4 +1,5 @@
 const links = [
+    // Organisation & Communication
     {
       category: "Organisation & Communication",
       items: [
@@ -35,6 +36,7 @@ const links = [
         }
       ]
     },
+    // Development
     {
       category: "Development",
       items: [
@@ -42,8 +44,10 @@ const links = [
           { title: "Bitbucket creating_web", url: "https://bitbucket.org/creating_web", description: "creating_web - Bitbucket repos" },
           { title: "Gitlab", url: "https://gitlab.com", description: "Gitlab repos" },
           { title: "GitHub", url: "https://github.com", description: "GitHub repos" },
+          { title: "elest.io", url: "https://dash.elest.io/", description: "elest.io" },
       ]
     },
+    // Tools
     {
         category: "Tools",
         items: [
@@ -54,6 +58,7 @@ const links = [
           { title: "JSON Formatter", url: "https://jsonformatter.org", description: "Format JSON" }
         ]
     },
+    // Social
     {
       category: "Social",
       items: [
@@ -63,6 +68,7 @@ const links = [
         { title: "YouTube", url: "https://youtube.com", description: "Videos" }
       ]
     },
+    // News & Reading
     {
       category: "News & Reading",
       items: [
@@ -72,35 +78,111 @@ const links = [
         { title: "Medium", url: "https://medium.com", description: "Articles" }
       ]
     },
+    // Funke Medien Gruppe
     {
         category: "Funke Medien Gruppe",
+        items: [
+            { title: "Confluence intern", url: "https://dgtls.atlassian.net/wiki/spaces/FMG/overview", description: "Confluence intern"},
+            { title: "Confluence extern", url: "https://dgtls-ext-funke.atlassian.net/wiki/spaces/FMG/overview", description: "Confluence extern"},
+            { title: "API Dokumentation", url: "https://10.101.8.117/api/documentation", description: "Funke Medien Gruppe API Dokumentation"},
+        ],
         subcategories: [
             {
                 name: "Production",
                 items: [
                     { title: "Hoerzu Frontend", url: "https://hoerzu.de", description: "Hoerzu Prod Frontend"},
-                    { title: "Hoerzu Frontend (No CDN)", url: "https://redaktion.hoerzu.de", description: "Hoerzu Prod Frontend (No CDN)"},
+                    { title: "Hoerzu Frontend (No CDN)", url: "https://redaktion.hoerzu.de", description: "Hoerzu Prod Frontend (No CDN)", icon: "./img/favicon-hoerzu.png"},
                     { title: "Hoerzu Backend", url: "https://redaktion.hoerzu.de/admin/login", description: "Hoerzu Prod Admin Backend", icon: "./img/favicon-pimcore.png"},
                     { title: "TVD Frontend", url: "https://www.tvdigital.de/", description: "TVD Prod Frontend"},
-                    { title: "TVD Frontend (No CDN)", url: "https://redaktion.tvdigital.de/", description: "TVD Prod Frontend (No CDN)"},
+                    { title: "TVD Frontend (No CDN)", url: "https://redaktion.tvdigital.de/", description: "TVD Prod Frontend (No CDN)", icon: "./img/favicon-tvdigital.png"},
                 ]
             },
             {
                 name: "Staging",
                 items: [
-                    { title: "Hoerzu Frontend", url: "https://hzdevpimcore11.dcmdev.de/", description: "Hoerzu Staging Frontend"},
+                    { title: "Hoerzu Frontend", url: "https://hzdevpimcore11.dcmdev.de/", description: "Hoerzu Staging Frontend", icon: "./img/favicon-hoerzu.png"},
                     { title: "Hoerzu Backend", url: "https://redaktion.hoerzu.de/admin/login", description: "Hoerzu Staging Admin Backend", icon: "./img/favicon-pimcore.png"},
-                    { title: "TVD Frontend", url: "https://devredaktion11.tvdigital.de/", description: "TVD Staging Frontend"},
+                    { title: "TVD Frontend", url: "https://devredaktion11.tvdigital.de/", description: "TVD Staging Frontend", icon: "./img/favicon-tvdigital.png"},
                 ]
             }, 
             {
                 name: "Development",
                 items: [
-                    { title: "Hoerzu Frontend", url: "https://hoerzu-update.dgtls", description: "Hoerzu Development Frontend"},
+                    { title: "Hoerzu Frontend", url: "https://hoerzu-update.dgtls", description: "Hoerzu Development Frontend", icon: "./img/favicon-hoerzu.png"},
                     { title: "Hoerzu Backend", url: "https://hoerzu-update.dgtls/admin/login", description: "Hoerzu Development Admin Backend", icon: "./img/favicon-pimcore.png"},
-                    { title: "TVD Frontend", url: " https://tvdigital.dgtls", description: "TVD Development Frontend"}
+                    { title: "TVD Frontend", url: " https://tvdigital.dgtls", description: "TVD Development Frontend", icon: "./img/favicon-tvdigital.png"}
                 ]
             }
+        ]
+    },
+    // Die Bayrische
+    {
+        category: "Die Bayrische",
+        items: [
+            { title: "Confluence intern", url: "https://dgtls.atlassian.net/wiki/spaces/DBAY/overview", description: "Confluence intern"},
+            { title: "API Dokumentation", url: "https://10.101.8.117/api/documentation", description: "Die Bayrische API Dokumentation"},
+        ],
+        subcategories: [
+            {
+                name: "Production",
+                items: [
+                    { title: "Kestra", url: "https://kestra-prod-u602.vm.elestio.app/ui/dashboard", description: "Kestra Production Dashboard"}
+                ]
+            },
+            {
+                name: "Staging",
+                items: [
+                    { title: "Stage Dashboard", url: "https://baytrack.eu.auth0.com/u/login?state=hKFo2SBtY1JEal9nN1pzVTVzSzMtVkVjXzVQX1AwNEFTQ2hRVqFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIExhR1pLVzBjcmZ3Nmt0VTF5RV9VNDZ6bVVuSVpzeHozo2NpZNkgdGhyd2c2UFNwWmRYU0Y1Sm9sc1ZoUk0yNDV2VkxBTk8/", description: "Stage Dashboard"},
+                ]
+            },
+        ]
+    },
+    // Schönklinik
+    {
+        category: "Schönklinik",
+        items: [
+        ],
+    },
+    // WTS
+    {
+        category: "WTS",
+        items: [
+            { title: "Confluence intern", url: "https://dgtls.atlassian.net/wiki/spaces/wtsfas/overview", description: "Confluence intern"},
+        ],
+        subcategories: [
+            {
+                name: "Production",
+                items: [
+                ]
+            },
+            {
+                name: "Staging",
+                items: [
+                ]
+            },
+            {
+                name: "Test",
+                items: [
+                ]
+            },
+            {
+                name: "Development",
+                items: [
+                ]
+            }
+        ]
+    },
+    // Caritas
+    {
+        category: "Caritas",
+        items: [
+        ],
+        subcategories: [
+            {
+                name: "Production",
+                items: [
+                ]
+            },
         ]
     }
   ];
