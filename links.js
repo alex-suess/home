@@ -188,5 +188,16 @@ const links = [
           { title: "Reddit", url: "https://reddit.com", description: "Communities" },
           { title: "YouTube", url: "https://youtube.com", description: "Videos" }
         ]
+      },
+      // Homelab
+      {
+        category: "Homelab",
+        items: [
+          { title: "Homeassistant local", url: "http://homeassistant.local:8123", description: "Homeassistant local" },
+          { title: "Homeassistant remote", url: "https://home.familie-suess.com", description: "Homeassistant remote" },
+          { title: "Proxmox", url: "http://192.168.178.31:8006", description: "Proxmox Dashboard" },
+          { title: "Nextcloud", url: "http://cloud.dahoam", description: "Nextcloud Dashboard" },
+          { title: "Immich", url: "http://fotos.dahoam", description: "Immich Foto Gallery" },
+        ]
       }
   ];
