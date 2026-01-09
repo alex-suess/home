@@ -142,13 +142,20 @@
       gap: 1rem;
       padding: 0.875rem 1.5rem;
       cursor: pointer;
-      transition: background 0.15s ease;
+      transition: background 0.15s ease, border-color 0.15s ease;
       text-decoration: none;
       color: inherit;
+      border: 2px solid transparent;
+      outline: none;
     }
     
     .spotlight-result-item:hover,
     .spotlight-result-item.selected {
+      background: #F5EBE0;
+    }
+    
+    .spotlight-result-item:focus {
+      border-color: #C9705F;
       background: #F5EBE0;
     }
     

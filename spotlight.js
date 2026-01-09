@@ -60,11 +60,29 @@ function filterLinks(query) {
   // Split query into words for fuzzy multi-word matching
   const queryWords = query.toLowerCase().split(/\s+/).filter(w => w.length > 0);
   
-  return allLinks.filter(link => {
+  // Filter links that match all query words
+  const filtered = allLinks.filter(link => {
     const searchText = `${link.title} ${link.description} ${link.url} ${link.category}`.toLowerCase();
     // All query words must appear somewhere in the searchable text
     return queryWords.every(word => searchText.includes(word));
   });
+  
+  // Calculate match score: 1 = title match (highest), 2 = url match, 3 = description only (lowest)
+  function getMatchScore(link) {
+    const title = link.title.toLowerCase();
+    const url = link.url.toLowerCase();
+    
+    const matchesTitle = queryWords.some(word => title.includes(word));
+    if (matchesTitle) return 1;
+    
+    const matchesUrl = queryWords.some(word => url.includes(word));
+    if (matchesUrl) return 2;
+    
+    return 3; // Match is in description/category
+  }
+  
+  // Sort by score (ascending: 1 first, then 2, then 3)
+  return filtered.sort((a, b) => getMatchScore(a) - getMatchScore(b));
 }
 
 function renderSpotlightResults(query) {
