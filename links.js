@@ -65,16 +65,6 @@ const links = [
           { title: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - Free images" },
         ]
     },
-    // News & Reading
-    {
-      category: "News & Reading",
-      items: [
-        { title: "Hacker News", url: "https://news.ycombinator.com", description: "Tech news" },
-        { title: "TechCrunch", url: "https://techcrunch.com", description: "Startup news" },
-        { title: "The Verge", url: "https://theverge.com", description: "Tech & culture" },
-        { title: "Medium", url: "https://medium.com", description: "Articles" }
-      ]
-    },
     // Funke Medien Gruppe
     {
         category: "Funke Medien Gruppe",
@@ -182,30 +172,100 @@ const links = [
             },
         ]
     },
-    // Social
+    // Fun
     {
-        category: "Social",
-        items: [
-          { title: "Twitter / X", url: "https://x.com", description: "Microblogging" },
-          { title: "LinkedIn", url: "https://linkedin.com", description: "Professional network" },
-          { title: "Reddit", url: "https://reddit.com", description: "Communities" },
-          { title: "YouTube", url: "https://youtube.com", description: "Videos" },
-          { title: "Makerworld", url: "https://makerworld.com", description: "Makerworld" },
-          { title: "My Dealz", url: "https://my-dealz.de", description: "My Dealz" },
-          { title: "tm.de", url: "https://tm.de", description: "Transfermarkt News" },
+    category: "Fun",
+    items: [
+        { title: "Ligainsider", url: "https://ligainsider.de", description: "Ligainsider" },
+        { title: "DnD beyond", url: "https://dndbeyond.com", description: "DnD Beyond" },
+        { title: "Roll20", url: "https://roll20.net", description: "Roll20" },
+    ],
+    subcategories: [
+            {
+                name: "Streaming",
+                items: [
+                    { title: "Netflix", url: "https://netflix.com", description: "Netflix" },
+                    { title: "Amazon Prime", url: "https://amazon.de/prime", description: "Amazon Prime" },
+                    { title: "Dropout", url: "https://dropout.tv", description: "Dropout" },
+                    { title: "ARD Mediathek", url: "https://www.ardmediathek.de", description: "ARD Mediathek" },
+                    { title: "ZDF Mediathek", url: "https://www.zdf.de/mediathek", description: "ZDF Mediathek" }
+                ]
+            },
+            {
+                name: "Social",
+                items: [
+                    { title: "Twitter / X", url: "https://x.com", description: "Microblogging" },
+                    { title: "LinkedIn", url: "https://linkedin.com", description: "Professional network" },
+                    { title: "Reddit", url: "https://reddit.com", description: "Communities" },
+                    { title: "YouTube", url: "https://youtube.com", description: "Videos" },
+                    { title: "tm.de", url: "https://tm.de", description: "Transfermarkt Fußball News" },
+                    { title: "BFV", url: "https://bfv.de", description: "BfV.de Fussball Verband" },
+                ]
+            },
+            {
+                category: "News & Reading",
+                items: [
+                  { title: "Hacker News", url: "https://news.ycombinator.com", description: "Tech news" },
+                  { title: "TechCrunch", url: "https://techcrunch.com", description: "Startup news" },
+                  { title: "The Verge", url: "https://theverge.com", description: "Tech & culture" },
+                  { title: "Medium", url: "https://medium.com", description: "Articles" }
+                ]
+            },
+            {
+                name: "Shopping",
+                items: [
+                    { title: "Amazon", url: "https://amazon.de", description: "Amazon" },
+                    { title: "Ebay", url: "https://ebay.de", description: "Ebay" },
+                    { title: "My Dealz", url: "https://my-dealz.de", description: "My Dealz" },
+                    { title: "Payback", url: "https://www.payback.de", description: "Payback" },
+                    { title: "Bring Einkaufsliste", url: "https://web.getbringbring.com", description: "Bring Einkaufsliste" },
+                ]
+            }
         ]
-      },
-      // Homelab
-      {
-        category: "Homelab",
+    },
+    // Banking
+    {
+        category: "Banking / Finanzen",
         items: [
-          { title: "Homeassistant local", url: "http://homeassistant.local:8123", description: "Homeassistant local" },
-          { title: "Homeassistant remote", url: "https://home.familie-suess.com", description: "Homeassistant remote" },
-          { title: "Proxmox", url: "http://server.dahoam:8006", description: "Proxmox Dashboard" },
-          { title: "Nextcloud", url: "http://cloud.dahoam", description: "Nextcloud Dashboard" },
-          { title: "Immich", url: "http://fotos.dahoam", description: "Immich Foto Gallery" },
-          { title: "Booklore", url: "http://books.dahoam", description: "Booklore Library" },
-          { title: "Jellyfin", url: "http://media.dahoam", description: "Jellyfin Media Library" },
+            { title: "Sparkasse Online", url: "https://www.spk-ts.de/de/home.html", description: "Sparkasse Online banking" },
+            { title: "Trade Republic", url: "https://trade.de", description: "Trade Republic" },
+            { title: "Finanzen.net", url: "https://finanzen.net", description: "Finanzen.net" },
+            { title: "ING Diba", url: "https://www.ing-diba.de", description: "ING Diba" },
+            { title: "VR Bank", url: "https://www.vb-rb.de", description: "VR Bank online banking" },
+            { title: "PayPal", url: "https://www.paypal.com", description: "PayPal" },
+            { title: "Bank Norwegian", url: "https://www.banknorwegian.de", description: "Bank Norwegian" },
         ]
-      }
+    },
+    // Hobby
+    {
+        category: "Hobby",
+        items: [],
+        subcategories: [
+            {
+                name: "3D Printing",
+                items: [
+                    { title: "Multiboard", url: "https://beta.multiboard.io/", description: "Multiboard Parts library" },
+                    { title: "Thingyverse", url: "https://thingyverse.com", description: "Thingyverse" },
+                    { title: "Makerworld", url: "https://makerworld.com", description: "Makerworld" },
+                    { title: "Thangs", url: "https://thangs.com", description: "Thangs" },
+                ]
+            },
+            {
+                name: "Homelab",
+                items: [
+                    { title: "Homeassistant local", url: "http://homeassistant.local:8123", description: "Homeassistant local" },
+                    { title: "Homeassistant remote", url: "https://home.familie-suess.com", description: "Homeassistant remote" },
+                    { title: "Proxmox", url: "http://server.dahoam:8006", description: "Proxmox Dashboard" },
+                    { title: "Nextcloud", url: "http://cloud.dahoam", description: "Nextcloud Dashboard" },
+                    { title: "Immich", url: "http://fotos.dahoam", description: "Immich Foto Gallery" },
+                    { title: "Booklore", url: "http://books.dahoam", description: "Booklore Library" },
+                    { title: "Jellyfin", url: "http://media.dahoam", description: "Jellyfin Media Library" },
+                    { title: "Homeassistant Docs", url: "https://www.home-assistant.io", description: "Homeassistant Documentation" },
+                    { title: "Homeassistant Forum", url: "https://community.home-assistant.io", description: "Homeassistant Forum" },
+                    { title: "Homeassistant Blog", url: "https://blog.home-assistant.io", description: "Homeassistant Blog" },
+                    { title: "Homeassistant GitHub", url: "https://github.com/home-assistant", description: "Homeassistant GitHub" },
+                ]
+            }
+        ]
+    }
   ];

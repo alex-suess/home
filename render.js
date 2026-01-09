@@ -8,12 +8,15 @@ function getFaviconUrl(url, customIcon) {
     }
   }
   
-  function createLinkCard(link, index) {
+  function createLinkCard(link, index, isFirst = false) {
     const card = document.createElement('a');
     card.href = link.url;
     card.target = '_blank';
     card.rel = 'noopener noreferrer';
     card.className = 'link-card block bg-white rounded-2xl p-5 shadow-sm border border-sand/50 animate-in';
+    if (isFirst) {
+      card.dataset.firstLink = 'true';
+    }
     card.style.animationDelay = `${0.1 + index * 0.05}s`;
     
     const faviconUrl = getFaviconUrl(link.url, link.icon);
@@ -41,7 +44,7 @@ function getFaviconUrl(url, customIcon) {
     return card;
   }
   
-  function createSubcategorySection(subcategory, subcategoryIndex) {
+  function createSubcategorySection(subcategory, subcategoryIndex, isFirstSubcategory = false) {
     const wrapper = document.createElement('div');
     wrapper.className = 'subcategory-section mt-6';
     
@@ -53,7 +56,8 @@ function getFaviconUrl(url, customIcon) {
     grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4';
     
     (subcategory.items || []).forEach((link, linkIndex) => {
-      grid.appendChild(createLinkCard(link, linkIndex + subcategoryIndex * 3));
+      const isFirst = isFirstSubcategory && linkIndex === 0;
+      grid.appendChild(createLinkCard(link, linkIndex + subcategoryIndex * 3, isFirst));
     });
     
     wrapper.appendChild(header);
@@ -64,7 +68,8 @@ function getFaviconUrl(url, customIcon) {
 
   function createCategorySection(category, categoryIndex) {
     const section = document.createElement('section');
-    section.className = 'animate-in';
+    section.id = `category-${categoryIndex}`;
+    section.className = 'animate-in pt-20';
     section.style.animationDelay = `${0.1 + categoryIndex * 0.15}s`;
     
     const header = document.createElement('h2');
@@ -73,13 +78,18 @@ function getFaviconUrl(url, customIcon) {
     
     section.appendChild(header);
     
+    // Track if we've marked the first link
+    let hasFirstLink = false;
+    
     // Render direct items if present
-    if (category.items && category.items.length > 0) {
+    if (category.items && category.items.length > 0) {  
       const grid = document.createElement('div');
       grid.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4';
       
       category.items.forEach((link, linkIndex) => {
-        grid.appendChild(createLinkCard(link, linkIndex));
+        const isFirst = !hasFirstLink && linkIndex === 0;
+        if (isFirst) hasFirstLink = true;
+        grid.appendChild(createLinkCard(link, linkIndex, isFirst));
       });
       
       section.appendChild(grid);
@@ -88,13 +98,56 @@ function getFaviconUrl(url, customIcon) {
     // Render subcategories if present
     if (category.subcategories && category.subcategories.length > 0) {
       category.subcategories.forEach((subcategory, subIndex) => {
-        section.appendChild(createSubcategorySection(subcategory, subIndex));
+        const isFirstSubcategory = !hasFirstLink && subIndex === 0;
+        if (isFirstSubcategory) hasFirstLink = true;
+        section.appendChild(createSubcategorySection(subcategory, subIndex, isFirstSubcategory));
       });
     }
     
     return section;
   }
   
+  function renderQuickNav() {
+    const nav = document.getElementById('quick-nav');
+    
+    if (typeof links === 'undefined' || !Array.isArray(links) || links.length === 0) {
+      return;
+    }
+    
+    links.forEach((category, index) => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'quick-nav-item';
+      button.textContent = category.category;
+      button.tabIndex = 0;
+      
+      const handleActivation = () => {
+        const section = document.getElementById(`category-${index}`);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          
+          // Focus the first link card after scroll completes
+          const firstLink = section.querySelector('[data-first-link="true"]');
+          if (firstLink) {
+            setTimeout(() => {
+              firstLink.focus();
+            }, 400);
+          }
+        }
+      };
+      
+      button.addEventListener('click', handleActivation);
+      button.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          handleActivation();
+        }
+      });
+      
+      nav.appendChild(button);
+    });
+  }
+
   function renderLinks() {
     const container = document.getElementById('links-container');
     
@@ -113,5 +166,8 @@ function getFaviconUrl(url, customIcon) {
   }
   
   // Render on DOM ready
-  document.addEventListener('DOMContentLoaded', renderLinks);
+  document.addEventListener('DOMContentLoaded', () => {
+    renderLinks();
+    renderQuickNav();
+  });
   

@@ -6,11 +6,16 @@
     
     .link-card {
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 2px solid transparent;
+      outline: none;
     }
     
-    .link-card:hover {
-      transform: translateY(-4px);
+    .link-card:hover, .link-card:focus {
+      transform: translateY(-4px) !important;
       box-shadow: 0 12px 24px -8px rgba(45, 45, 45, 0.15);
+      border-color: #C9705F;
+      background: #F5EBE0;
+      outline: none;
     }
     
     .favicon-img {
@@ -186,4 +191,66 @@
       border-radius: 0.25rem;
       font-family: monospace;
       font-size: 0.7rem;
+    }
+
+    /* Quick Nav Styles */
+    .quick-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      width: 100%;
+      background: rgba(253, 248, 243, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201, 112, 95, 0.15);
+      overflow-x: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #C9705F40 transparent;
+    }
+
+    .quick-nav::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    .quick-nav::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .quick-nav::-webkit-scrollbar-thumb {
+      background: #C9705F40;
+      border-radius: 2px;
+    }
+
+    .quick-nav-item {
+      flex-shrink: 0;
+      padding: 0.5rem 1rem;
+      font-family: 'Karla', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #2D2D2D;
+      background: white;
+      border: 2px solid transparent;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(45, 45, 45, 0.08);
+    }
+
+    .quick-nav-item:hover {
+      background: #F5EBE0;
+      box-shadow: 0 2px 6px rgba(45, 45, 45, 0.12);
+    }
+
+    .quick-nav-item:focus {
+      outline: none;
+      border-color: #C9705F;
+      background: #F5EBE0;
+      box-shadow: 0 0 0 3px rgba(201, 112, 95, 0.15);
+    }
+
+    .quick-nav-item:active {
+      transform: scale(0.97);
     }
