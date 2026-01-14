@@ -63,6 +63,7 @@ const links = [
           { title: "draw.io", url: "https://app.diagrams.net/", description: "draw.io - Draw diagrams" },
           { title: "Heroicons", url: "https://heroicons.dev/", description: "Heroicons - Icon Library" },
           { title: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - Free images" },
+          { title: "Google Maps", url: "https://maps.google.com", description: "Google Maps" },
         ]
     },
     // Funke Medien Gruppe
@@ -155,6 +156,33 @@ const links = [
             {
                 name: "Development",
                 items: [
+                ]
+            }
+        ]
+    },
+    // Kontron
+    {
+        category: "Kontron",
+        items: [
+        ],
+        subcategories: [
+            {
+                name: "Production",
+                items: [
+                    { title: "Production Pimcore Backend", url: "https://kontron.com/admin", description: "Kontron Production Pimcore Backend" },
+                    { title: "Production Pimcore Frontend", url: "https://kontron.com", description: "Kontron Production Pimcore Frontend" },
+                ]
+            },
+            {
+                name: "Stage (old)",
+                items: [
+                    { title: "Stage Pimcore Backend", url: "https://stage2.kontron.com/admin", description: "Old Kontron Stage Pimcore Backend" },
+                ]
+            },
+            {
+                name: "Stage (new)",
+                items: [
+                    { title: "Stage Pimcore Backend", url: "https://stage3.kontron.com/admin", description: "New Kontron Stage Pimcore Backend" },
                 ]
             }
         ]
