@@ -17,7 +17,7 @@ function getFaviconUrl(url, customIcon) {
     if (isFirst) {
       card.dataset.firstLink = 'true';
     }
-    card.style.animationDelay = `${0.1 + index * 0.05}s`;
+    card.style.animationDelay = `${Math.min(0.1 + index * 0.05, 0.5)}s`;
     
     const faviconUrl = getFaviconUrl(link.url, link.icon);
     
@@ -28,6 +28,7 @@ function getFaviconUrl(url, customIcon) {
             src="${faviconUrl}" 
             alt="" 
             class="favicon-img w-7 h-7 object-contain"
+            loading="lazy"
             onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\\'text-terracotta font-heading font-bold text-lg\\'>${link.title.charAt(0)}</span>'"
           >
         </div>

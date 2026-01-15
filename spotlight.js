@@ -2,10 +2,13 @@
 
 let spotlightSelectedIndex = -1;
 let spotlightResults = [];
+let cachedAllLinks = null;
 
 function getAllLinks() {
+  if (cachedAllLinks) return cachedAllLinks;
   if (typeof links === 'undefined' || !Array.isArray(links)) return [];
-  return links.flatMap(category => {
+  
+  cachedAllLinks = links.flatMap(category => {
     const directItems = (category.items || []).map(item => ({
       ...item,
       category: category.category
@@ -20,6 +23,8 @@ function getAllLinks() {
     
     return [...directItems, ...subcategoryItems];
   });
+  
+  return cachedAllLinks;
 }
 
 function openSpotlight() {
@@ -117,6 +122,7 @@ function renderSpotlightResults(query) {
             src="${faviconUrl}" 
             alt="" 
             class="w-5 h-5 object-contain"
+            loading="lazy"
             onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\\'text-terracotta font-heading font-bold\\'>${link.title.charAt(0)}</span>'"
           >
         </div>

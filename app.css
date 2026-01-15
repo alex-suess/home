@@ -59,6 +59,12 @@
       opacity: 0;
     }
     
+    /* Performance: skip rendering off-screen sections */
+    section.animate-in {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 500px;
+    }
+    
     .pattern-bg {
       background-image: 
         radial-gradient(circle at 20% 80%, rgba(201, 112, 95, 0.08) 0%, transparent 50%),
