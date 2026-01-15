@@ -55,7 +55,7 @@ function closeSpotlight() {
 
 function filterLinks(query) {
   const allLinks = getAllLinks();
-  if (!query.trim()) return allLinks.slice(0, 8); // Show first 8 when empty
+  if (!query.trim() || query.trim().length < 3) return []; // Require at least 3 characters
   
   // Split query into words for fuzzy multi-word matching
   const queryWords = query.toLowerCase().split(/\s+/).filter(w => w.length > 0);
@@ -90,7 +90,20 @@ function renderSpotlightResults(query) {
   spotlightResults = filterLinks(query);
   spotlightSelectedIndex = spotlightResults.length > 0 ? 0 : -1;
   
-  if (spotlightResults.length === 0 && query.trim()) {
+  // Show hint when query is too short
+  if (!query.trim() || query.trim().length < 3) {
+    resultsContainer.innerHTML = `
+      <div class="spotlight-no-results">
+        Type at least 3 characters to search
+      </div>
+      <div class="spotlight-hint">
+        <span><kbd>Esc</kbd> to close</span>
+      </div>
+    `;
+    return;
+  }
+  
+  if (spotlightResults.length === 0) {
     resultsContainer.innerHTML = `
       <div class="spotlight-no-results">
         No links found for "<strong>${escapeHtml(query)}</strong>"

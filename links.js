@@ -177,6 +177,7 @@ const links = [
                 name: "Stage (old)",
                 items: [
                     { title: "Stage Pimcore Backend", url: "https://stage2.kontron.com/admin", description: "Old Kontron Stage Pimcore Backend" },
+                    { title: "Stage Pimcore Frontend", url: "https://stage2.kontron.com", description: "Old Kontron Stage Pimcore Frontend" },
                 ]
             },
             {
