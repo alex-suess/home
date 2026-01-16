@@ -52,18 +52,77 @@ const links = [
     {
         category: "Tools",
         items: [
-          { title: "ChatGPT", url: "https://chat.openai.com", description: "AI assistant" },
-          { title: "Vally", url: "https://vally.valantic.ai/", description: "Vally - AI assistant", icon: "./img/favicon-vally.png"},
-          { title: "Figma", url: "https://figma.com", description: "Design tool" },
-          { title: "Miro", url: "https://miro.com/app/dashboard/", description: "Miro - Whiteboard" },
-          { title: "JSON Formatter", url: "https://jsonformatter.org", description: "Format JSON" },
-          { title: "Regex101", url: "https://regex101.com", description: "Regex Tester" },
-          { title: "Regex Generator", url: "https://regexr.com", description: "Regex Generator" },
-          { title: "Browserstack", url: "https://www.browserstack.com", description: "Browserstack - Test your website in different browsers" },
-          { title: "draw.io", url: "https://app.diagrams.net/", description: "draw.io - Draw diagrams" },
-          { title: "Heroicons", url: "https://heroicons.dev/", description: "Heroicons - Icon Library" },
-          { title: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - Free images" },
           { title: "Google Maps", url: "https://maps.google.com", description: "Google Maps" },
+        ],
+        subcategories: [
+            {
+                name: "AI",
+                items: [
+                    { title: "ChatGPT", url: "https://chat.openai.com", description: "AI assistant" },
+                    { title: "Vally", url: "https://vally.valantic.ai/", description: "Vally - AI assistant", icon: "./img/favicon-vally.png"},
+                ]
+            },
+            {
+                name: "Design & Diagrams",
+                items: [
+                    { title: "Figma", url: "https://figma.com", description: "Design tool" },
+                    { title: "Miro", url: "https://miro.com/app/dashboard/", description: "Miro - Whiteboard" },
+                    { title: "draw.io", url: "https://app.diagrams.net/", description: "draw.io - Draw diagrams" },
+                    { title: "Dribbble", url: "https://dribbble.com", description: "Dribbble - Design Inspiration" },
+                ]
+            },
+            {
+                name: "Dev Tools",
+                items: [
+                    { title: "JSON Formatter", url: "https://jsonformatter.org", description: "Format JSON" },
+                    { title: "Regex101", url: "https://regex101.com", description: "Regex Tester" },
+                    { title: "Regex Generator", url: "https://regexr.com", description: "Regex Generator" },
+                    { title: "Browserstack", url: "https://www.browserstack.com", description: "Browserstack - Test your website in different browsers" },
+                    { title: "Can I Use", url: "https://caniuse.com", description: "Can I Use - Browser compatibility tables" },
+                ]
+            },
+            {
+                name: "Playgrounds",
+                items: [
+                    { title: "CodePen", url: "https://codepen.io", description: "CodePen - Frontend Playground" },
+                    { title: "PHP Sandbox", url: "https://phpsandbox.io", description: "PHP Sandbox - PHP playground" },
+                    { title: "JSFiddle", url: "https://jsfiddle.net", description: "JSFiddle - JavaScript playground" },
+                ]
+            },
+            {
+                name: "Accessibility",
+                items: [
+                    { title: "Contrast Checker", url: "https://webaim.org/resources/contrastchecker", description: "WebAIM Contrast Checker - WCAG contrast" },
+                    { title: "A11y Project", url: "https://a11yproject.com", description: "A11y Project - Accessibility resources" },
+                    { title: "Who Can Use", url: "https://whocanuse.com", description: "Who Can Use - Color contrast checker" },
+                    { title: "Color Oracle", url: "https://colororacle.org", description: "Color Oracle - Color blindness simulator" },
+                ]
+            },
+            {
+                name: "Learning & Documentation",
+                items: [
+                    { title: "MDN Web Docs", url: "https://developer.mozilla.org", description: "MDN Web Docs - Web documentation" },
+                    { title: "CSS-Tricks", url: "https://css-tricks.com", description: "CSS-Tricks - CSS tips and tutorials" },
+                    { title: "SymfonyCasts", url: "https://symfonycasts.com", description: "SymfonyCasts - PHP & Symfony Tutorials" },
+                    { title: "Laracasts", url: "https://laracasts.com", description: "Laracasts - Laravel & PHP tutorials" },
+                    { title: "FreeCodeCamp", url: "https://freecodecamp.org", description: "FreeCodeCamp - Learn to code" },
+                    { title: "W3Schools", url: "https://w3schools.com", description: "W3Schools - Web development tutorials" },
+                    { title: "Stack Overflow", url: "https://stackoverflow.com", description: "Stack Overflow - Developer Q&A" },
+                ]
+            },
+            {
+                name: "Icons & Assets",
+                items: [
+                    { title: "Heroicons", url: "https://heroicons.dev/", description: "Heroicons - Icon Library" },
+                    { title: "Font Awesome", url: "https://fontawesome.com/icons", description: "Font Awesome - Icon Library" },
+                    { title: "Lucide Icons", url: "https://lucide.dev", description: "Lucide Icons - Icon library" },
+                    { title: "Tabler Icons", url: "https://tabler.io/icons", description: "Tabler Icons - Icon library" },
+                    { title: "Unsplash", url: "https://unsplash.com/", description: "Unsplash - Free images" },
+                    { title: "Pexels", url: "https://pexels.com", description: "Pexels - Free stock photos & videos" },
+                    { title: "Icons8", url: "https://icons8.com", description: "Icons8 - Icons, photos & illustrations" },
+                    { title: "unDraw", url: "https://undraw.co", description: "unDraw - Open-source illustrations" },
+                ]
+            }
         ]
     },
     // Funke Medien Gruppe
@@ -217,7 +276,8 @@ const links = [
                     { title: "Amazon Prime", url: "https://amazon.de/prime", description: "Amazon Prime" },
                     { title: "Dropout", url: "https://dropout.tv", description: "Dropout" },
                     { title: "ARD Mediathek", url: "https://www.ardmediathek.de", description: "ARD Mediathek" },
-                    { title: "ZDF Mediathek", url: "https://www.zdf.de/mediathek", description: "ZDF Mediathek" }
+                    { title: "ZDF Mediathek", url: "https://www.zdf.de/mediathek", description: "ZDF Mediathek" },
+                    { title: "Spotify", url: "https://open.spotify.com", description: "Spotify - Music Streaming" }
                 ]
             },
             {
@@ -229,6 +289,9 @@ const links = [
                     { title: "YouTube", url: "https://youtube.com", description: "Videos" },
                     { title: "tm.de", url: "https://tm.de", description: "Transfermarkt Fußball News" },
                     { title: "BFV", url: "https://bfv.de", description: "BfV.de Fussball Verband" },
+                    { title: "Instagram", url: "https://instagram.com", description: "Instagram" },
+                    { title: "Discord", url: "https://discord.com", description: "Discord" },
+                    { title: "Bluesky", url: "https://bsky.app", description: "Bluesky" },
                 ]
             },
             {
@@ -248,6 +311,8 @@ const links = [
                     { title: "My Dealz", url: "https://my-dealz.de", description: "My Dealz" },
                     { title: "Payback", url: "https://www.payback.de", description: "Payback" },
                     { title: "Bring Einkaufsliste", url: "https://web.getbringbring.com", description: "Bring Einkaufsliste" },
+                    { title: "Idealo", url: "https://idealo.de", description: "Idealo - Price comparison" },
+                    { title: "Alternate", url: "https://alternate.de", description: "Alternate - Electronics" },
                 ]
             }
         ]
