@@ -7,23 +7,23 @@ let cachedAllLinks = null;
 function getAllLinks() {
   if (cachedAllLinks) return cachedAllLinks;
   if (typeof links === 'undefined' || !Array.isArray(links)) return [];
-  
+
   cachedAllLinks = links.flatMap(category => {
     const directItems = (category.items || []).map(item => ({
       ...item,
       category: category.category
     }));
-    
+
     const subcategoryItems = (category.subcategories || []).flatMap(sub =>
       (sub.items || []).map(item => ({
         ...item,
         category: `${category.category} › ${sub.name}`
       }))
     );
-    
+
     return [...directItems, ...subcategoryItems];
   });
-  
+
   return cachedAllLinks;
 }
 
@@ -31,16 +31,16 @@ function openSpotlight() {
   const backdrop = document.getElementById('spotlight-backdrop');
   const container = document.getElementById('spotlight-container');
   const input = document.getElementById('spotlight-input');
-  
+
   backdrop.classList.add('active');
   container.classList.add('active');
   input.value = '';
   spotlightSelectedIndex = -1;
   renderSpotlightResults('');
-  
+
   // Delay focus to allow visibility transition to start
   setTimeout(() => {
-      input.focus();
+    input.focus();
   }, 100);
 }
 
@@ -49,7 +49,7 @@ function closeSpotlight() {
   const container = document.getElementById('spotlight-container');
   const input = document.getElementById('spotlight-input');
   const results = document.getElementById('spotlight-results');
-  
+
   backdrop.classList.remove('active');
   container.classList.remove('active');
   input.value = '';
@@ -61,31 +61,31 @@ function closeSpotlight() {
 function filterLinks(query) {
   const allLinks = getAllLinks();
   if (!query.trim()) return allLinks.slice(0, 8); // Show first 8 when empty
-  
+
   // Split query into words for fuzzy multi-word matching
   const queryWords = query.toLowerCase().split(/\s+/).filter(w => w.length > 0);
-  
+
   // Filter links that match all query words
   const filtered = allLinks.filter(link => {
     const searchText = `${link.title} ${link.description} ${link.url} ${link.category}`.toLowerCase();
     // All query words must appear somewhere in the searchable text
     return queryWords.every(word => searchText.includes(word));
   });
-  
+
   // Calculate match score: 1 = title match (highest), 2 = url match, 3 = description only (lowest)
   function getMatchScore(link) {
     const title = link.title.toLowerCase();
     const url = link.url.toLowerCase();
-    
+
     const matchesTitle = queryWords.some(word => title.includes(word));
     if (matchesTitle) return 1;
-    
+
     const matchesUrl = queryWords.some(word => url.includes(word));
     if (matchesUrl) return 2;
-    
+
     return 3; // Match is in description/category
   }
-  
+
   // Sort by score (ascending: 1 first, then 2, then 3)
   return filtered.sort((a, b) => getMatchScore(a) - getMatchScore(b));
 }
@@ -94,7 +94,7 @@ function renderSpotlightResults(query) {
   const resultsContainer = document.getElementById('spotlight-results');
   spotlightResults = filterLinks(query);
   spotlightSelectedIndex = spotlightResults.length > 0 ? 0 : -1;
-  
+
   if (spotlightResults.length === 0 && query.trim()) {
     resultsContainer.innerHTML = `
       <div class="spotlight-no-results">
@@ -107,7 +107,7 @@ function renderSpotlightResults(query) {
     `;
     return;
   }
-  
+
   const resultsHtml = spotlightResults.map((link, index) => {
     const faviconUrl = getFaviconUrl(link.url, link.icon);
     const selectedClass = index === spotlightSelectedIndex ? 'selected' : '';
@@ -136,7 +136,7 @@ function renderSpotlightResults(query) {
       </a>
     `;
   }).join('');
-  
+
   resultsContainer.innerHTML = resultsHtml + `
     <div class="spotlight-hint">
       <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
@@ -151,7 +151,7 @@ function updateSpotlightSelection() {
   items.forEach((item, index) => {
     item.classList.toggle('selected', index === spotlightSelectedIndex);
   });
-  
+
   // Scroll selected item into view
   const selected = items[spotlightSelectedIndex];
   if (selected) {
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const backdrop = document.getElementById('spotlight-backdrop');
   const input = document.getElementById('spotlight-input');
   const resultsContainer = document.getElementById('spotlight-results');
-  
+
   // Keyboard shortcut: Ctrl + /
   document.addEventListener('keydown', (e) => {
     if (e.ctrlKey && e.key === '/') {
@@ -197,21 +197,26 @@ document.addEventListener('DOMContentLoaded', () => {
         openSpotlight();
       }
     }
-    
+
     // Escape to close
     if (e.key === 'Escape') {
       closeSpotlight();
     }
   });
-  
+
   // Close on backdrop click
   backdrop.addEventListener('click', closeSpotlight);
-  
-  // Search input handling
+
+  // Search input handling - Debounced for performance
+  let debounceTimeout;
   input.addEventListener('input', (e) => {
-    renderSpotlightResults(e.target.value);
+    const value = e.target.value;
+    clearTimeout(debounceTimeout);
+    debounceTimeout = setTimeout(() => {
+      renderSpotlightResults(value);
+    }, 150);
   });
-  
+
   // Keyboard navigation in input
   input.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowDown') {
@@ -231,7 +236,7 @@ document.addEventListener('DOMContentLoaded', () => {
       navigateSpotlightResult();
     }
   });
-  
+
   // Mouse hover selection
   resultsContainer.addEventListener('mouseover', (e) => {
     const item = e.target.closest('.spotlight-result-item');
