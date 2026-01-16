@@ -1,0 +1,41 @@
+/* Host styling */
+:host {
+  display: block;
+}
+
+/* Active state for nav items */
+.quick-nav-item.active {
+  background: var(--color-sand, #F5EBE0);
+  border-color: var(--color-terracotta, #C9705F);
+  box-shadow: 0 0 0 3px rgba(201, 112, 95, 0.15);
+  color: var(--color-terracotta, #C9705F);
+  font-weight: 600;
+}
+
+/* Animation for active state indicator */
+.quick-nav-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-nav-item::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 80%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-terracotta, #C9705F), var(--color-sienna, #A0522D));
+  border-radius: 1px;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quick-nav-item.active::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
+/* Smooth scroll into view for active item */
+.quick-nav-item.active {
+  scroll-snap-align: center;
+}

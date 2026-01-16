@@ -1,0 +1,41 @@
+<a 
+  [href]="link().url"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="link-card animate-in block bg-white rounded-xl p-4 shadow-sm cursor-pointer no-underline"
+  [style.animation-delay]="animationDelay()"
+  [attr.data-first-link]="isFirstLink() ? 'true' : null"
+>
+  <div class="flex items-start gap-3">
+    <!-- Favicon Container -->
+    <div 
+      class="favicon-container w-10 h-10 rounded-lg bg-sand flex items-center justify-center flex-shrink-0 overflow-hidden"
+    >
+      @if (!faviconError()) {
+        <img 
+          [src]="faviconUrl()"
+          [alt]="link().title + ' favicon'"
+          class="favicon-img w-6 h-6 object-contain"
+          loading="lazy"
+          (error)="onFaviconError()"
+        />
+      } @else {
+        <span class="text-terracotta font-outfit font-bold text-lg">
+          {{ fallbackLetter() }}
+        </span>
+      }
+    </div>
+    
+    <!-- Text Content -->
+    <div class="flex-1 min-w-0">
+      <h3 class="font-karla font-semibold text-charcoal text-sm leading-tight truncate">
+        {{ link().title }}
+      </h3>
+      @if (link().description) {
+        <p class="text-charcoal/60 text-xs mt-1 line-clamp-2 leading-relaxed">
+          {{ link().description }}
+        </p>
+      }
+    </div>
+  </div>
+</a>

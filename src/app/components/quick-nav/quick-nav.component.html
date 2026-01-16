@@ -1,0 +1,14 @@
+<nav class="quick-nav" aria-label="Category navigation">
+  @for (categoryName of categoryNames(); track trackCategory($index, categoryName)) {
+    <button
+      type="button"
+      class="quick-nav-item"
+      [class.active]="isActive(categoryName)"
+      [attr.aria-current]="isActive(categoryName) ? 'true' : null"
+      (click)="scrollToCategory(categoryName, $index)"
+      (keydown)="onKeydown($event, categoryName, $index)"
+    >
+      {{ categoryName }}
+    </button>
+  }
+</nav>

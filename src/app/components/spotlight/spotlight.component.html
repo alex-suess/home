@@ -1,0 +1,92 @@
+<!-- Backdrop -->
+<div 
+  class="spotlight-backdrop"
+  [class.active]="isOpen()"
+  (click)="onBackdropClick()"
+  aria-hidden="true">
+</div>
+
+<!-- Container -->
+<div 
+  class="spotlight-container"
+  [class.active]="isOpen()"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Search links">
+  
+  <!-- Search Input -->
+  <div class="spotlight-input-wrapper">
+    <svg class="spotlight-search-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+    </svg>
+    <input
+      #spotlightInput
+      type="text"
+      class="spotlight-input"
+      placeholder="Search links..."
+      autocomplete="off"
+      (input)="onInputChange($event)"
+      (keydown)="onInputKeydown($event)"
+    />
+  </div>
+
+  <!-- Results -->
+  <div class="spotlight-results" role="listbox">
+    @if (hasNoResults()) {
+      <!-- No results message -->
+      <div class="spotlight-no-results">
+        No links found for "<strong>{{ query() }}</strong>"
+      </div>
+      <div class="spotlight-hint">
+        <span><kbd>Enter</kbd> search on Ecosia</span>
+        <span><kbd>Esc</kbd> to close</span>
+      </div>
+    } @else {
+      <!-- Results list -->
+      @for (result of results(); track trackResult($index, result)) {
+        <a 
+          class="spotlight-result-item"
+          [class.selected]="$index === selectedIndex()"
+          [href]="result.link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          role="option"
+          [attr.aria-selected]="$index === selectedIndex()"
+          (mouseenter)="onResultHover($index)"
+          (click)="onResultClick($event, result)">
+          <!-- Favicon -->
+          <div class="spotlight-result-icon">
+            <img 
+              [src]="getFaviconUrl(result)" 
+              alt=""
+              class="spotlight-favicon"
+              loading="lazy"
+              appFaviconFallback
+            />
+            <span class="spotlight-fallback-letter" style="display: none;">
+              {{ getFallbackLetter(result) }}
+            </span>
+          </div>
+          
+          <!-- Content -->
+          <div class="spotlight-result-content">
+            <div class="spotlight-result-title">{{ result.link.title }}</div>
+            <div class="spotlight-result-category">{{ result.displayCategory }}</div>
+          </div>
+          
+          <!-- External link icon -->
+          <svg class="spotlight-external-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+          </svg>
+        </a>
+      }
+      
+      <!-- Keyboard hints -->
+      <div class="spotlight-hint">
+        <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+        <span><kbd>Enter</kbd> open</span>
+        <span><kbd>Esc</kbd> close</span>
+      </div>
+    }
+  </div>
+</div>

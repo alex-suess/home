@@ -1,0 +1,57 @@
+/* Component-specific styles for AppComponent */
+
+:host {
+  display: block;
+}
+
+/* Header section styling */
+.header-section {
+  position: relative;
+}
+
+/* Keyboard key styling */
+.kbd-key {
+  display: inline-block;
+  padding: 0.25rem 0.625rem;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-charcoal, #2D2D2D);
+  background: white;
+  border: 1px solid rgba(45, 45, 45, 0.1);
+  border-radius: 0.375rem;
+  box-shadow: 
+    0 1px 2px rgba(45, 45, 45, 0.08),
+    inset 0 -1px 0 rgba(45, 45, 45, 0.1);
+  transition: all 0.15s ease;
+}
+
+.kbd-key:hover {
+  background: var(--color-sand, #F5EBE0);
+  border-color: var(--color-terracotta, #C9705F);
+}
+
+.kbd-key-small {
+  display: inline-block;
+  padding: 0.125rem 0.375rem;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-charcoal, #2D2D2D);
+  background: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 1px 2px rgba(45, 45, 45, 0.06);
+}
+
+/* Empty state styling */
+.empty-state {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
+  margin: 2rem 0;
+}
+
+/* Footer section */
+.footer-section {
+  border-top: 1px solid rgba(201, 112, 95, 0.1);
+  background: linear-gradient(180deg, transparent, rgba(245, 235, 224, 0.3));
+}

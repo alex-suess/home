@@ -1,0 +1,16 @@
+/* Component-specific styles for category-section */
+/* Most styles are in global styles.css */
+
+:host {
+  display: block;
+}
+
+/* Subcategory section spacing */
+.subcategory-section:first-of-type {
+  margin-top: 1.5rem;
+}
+
+/* Ensure proper spacing when there are direct items before subcategories */
+.subcategory-section {
+  margin-top: 2rem;
+}

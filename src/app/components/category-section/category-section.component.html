@@ -1,0 +1,46 @@
+<section 
+  [id]="sectionId()"
+  class="category-section animate-in pt-20"
+  [style.animation-delay]="sectionAnimationDelay()"
+>
+  <!-- Category Header -->
+  <h2 class="category-title font-outfit text-2xl font-semibold text-charcoal mb-6 pb-1">
+    {{ category().category }}
+  </h2>
+
+  <!-- Direct Items Grid -->
+  @if (hasDirectItems()) {
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      @for (link of category().items; track trackLink($index, link)) {
+        <app-link-card 
+          [link]="link"
+          [animationIndex]="getDirectItemAnimationIndex($index)"
+          [isFirstLink]="isFirstDirectLink($index)"
+        />
+      }
+    </div>
+  }
+
+  <!-- Subcategories -->
+  @if (hasSubcategories()) {
+    @for (subcategory of nonEmptySubcategories(); track trackSubcategory($index, subcategory); let subIdx = $index) {
+      <div class="subcategory-section mt-6">
+        <!-- Subcategory Header -->
+        <h3 class="subcategory-title font-outfit text-lg font-medium text-charcoal/70 mb-4 pl-4 border-l-2 border-terracotta/40 ml-1">
+          {{ subcategory.name }}
+        </h3>
+        
+        <!-- Subcategory Items Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          @for (link of subcategory.items; track trackLink($index, link); let linkIdx = $index) {
+            <app-link-card 
+              [link]="link"
+              [animationIndex]="getSubcategoryItemAnimationIndex(subIdx, linkIdx)"
+              [isFirstLink]="isFirstSubcategoryLink(subIdx, linkIdx)"
+            />
+          }
+        </div>
+      </div>
+    }
+  }
+</section>

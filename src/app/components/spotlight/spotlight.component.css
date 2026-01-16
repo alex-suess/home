@@ -1,0 +1,102 @@
+/* Spotlight input wrapper */
+.spotlight-input-wrapper {
+  position: relative;
+}
+
+.spotlight-search-icon {
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #2D2D2D60;
+  pointer-events: none;
+}
+
+/* Favicon styling */
+.spotlight-result-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background: rgba(245, 235, 224, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.spotlight-favicon {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
+
+.spotlight-fallback-letter {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: #C9705F;
+  font-size: 0.875rem;
+}
+
+/* Result content */
+.spotlight-result-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.spotlight-result-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  color: #2D2D2D;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.spotlight-result-category {
+  font-size: 0.75rem;
+  color: rgba(45, 45, 45, 0.5);
+}
+
+/* External link icon */
+.spotlight-external-icon {
+  width: 1rem;
+  height: 1rem;
+  color: rgba(45, 45, 45, 0.3);
+  flex-shrink: 0;
+}
+
+/* Hover effects */
+.spotlight-result-item:hover .spotlight-external-icon,
+.spotlight-result-item.selected .spotlight-external-icon {
+  color: rgba(45, 45, 45, 0.5);
+}
+
+/* Animation for results appearance */
+.spotlight-result-item {
+  animation: spotlightItemIn 0.15s ease forwards;
+  opacity: 0;
+}
+
+@keyframes spotlightItemIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Stagger animation delays */
+.spotlight-result-item:nth-child(1) { animation-delay: 0s; }
+.spotlight-result-item:nth-child(2) { animation-delay: 0.02s; }
+.spotlight-result-item:nth-child(3) { animation-delay: 0.04s; }
+.spotlight-result-item:nth-child(4) { animation-delay: 0.06s; }
+.spotlight-result-item:nth-child(5) { animation-delay: 0.08s; }
+.spotlight-result-item:nth-child(6) { animation-delay: 0.10s; }
+.spotlight-result-item:nth-child(7) { animation-delay: 0.12s; }
+.spotlight-result-item:nth-child(8) { animation-delay: 0.14s; }
