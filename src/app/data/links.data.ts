@@ -200,7 +200,10 @@ export const LINKS_DATA: Category[] = [
     subcategories: [
       {
         name: 'Production',
-        items: []
+        items: [
+          { title: 'WTS Production Frontend', url: 'https://wts.com', description: 'WTS Production Frontend' },
+          { title: 'WTS Production Backend', url: 'https://wts.com/admin', description: 'WTS Production Backend' },
+        ]
       },
       {
         name: 'Staging',
