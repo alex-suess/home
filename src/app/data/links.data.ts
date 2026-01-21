@@ -106,6 +106,7 @@ export const LINKS_DATA: Category[] = [
           { title: 'MDN Web Docs', url: 'https://developer.mozilla.org', description: 'MDN Web Docs - Web documentation' },
           { title: 'CSS-Tricks', url: 'https://css-tricks.com', description: 'CSS-Tricks - CSS tips and tutorials' },
           { title: 'SymfonyCasts', url: 'https://symfonycasts.com', description: 'SymfonyCasts - PHP & Symfony Tutorials' },
+          { title: 'Pimcore Docs', url: 'https://docs.pimcore.com/platform/Pimcore/', description: 'Pimcore - Platform Documentation' },
           { title: 'Laracasts', url: 'https://laracasts.com', description: 'Laracasts - Laravel & PHP tutorials' },
           { title: 'FreeCodeCamp', url: 'https://freecodecamp.org', description: 'FreeCodeCamp - Learn to code' },
           { title: 'W3Schools', url: 'https://w3schools.com', description: 'W3Schools - Web development tutorials' },
