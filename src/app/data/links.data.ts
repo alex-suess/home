@@ -23,16 +23,16 @@ export const LINKS_DATA: Category[] = [
         name: 'Confluence',
         items: [
           { title: 'Confluence Home', url: 'https://dgtls.atlassian.net/wiki/home', description: 'Confluence Home', icon: './img/favicon-valantic.ico' },
-          { title: 'Mein Space', url: 'https://dgtls.atlassian.net/wiki/spaces/~712020577778bf0fce4e0aab5d980d98be4e60/overview', description: 'Mein privater Space', icon: './img/favicon-valantic.ico' },
-          { title: 'CL Development', url: 'https://dgtls.atlassian.net/wiki/spaces/CLD/overview', description: 'Chapter Lead Development Space', icon: './img/favicon-valantic.ico' },
-          { title: 'HR for Leads', url: 'https://dgtls.atlassian.net/wiki/spaces/HFL/overview?homepageId=1748992108', description: 'HR for Leads Space', icon: './img/favicon-valantic.ico' },
+          { title: 'Mein Space', url: 'https://dgtls.atlassian.net/wiki/spaces/~712020577778bf0fce4e0aab5d980d98be4e60/overview', description: 'Mein privater Confluence Space', icon: './img/favicon-valantic.ico' },
+          { title: 'CL Development', url: 'https://dgtls.atlassian.net/wiki/spaces/CLD/overview', description: 'Chapter Lead Development Confluence Space', icon: './img/favicon-valantic.ico' },
+          { title: 'HR for Leads', url: 'https://dgtls.atlassian.net/wiki/spaces/HFL/overview?homepageId=1748992108', description: 'HR for Leads Confluence Space', icon: './img/favicon-valantic.ico' },
         ]
       },
       {
         name: 'Tempo',
         items: [
           { title: 'DB Timesheet', url: 'https://dgtls.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/teams/team/62/timesheet?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&excludeInternalIssues=false&from=2024-12-01&groupBy=worker&includeRejectedRecords=false&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours=true&subPeriodType=MONTH&teamId=62&to=2024-12-31&viewType=TIMESHEET', description: 'DB Timesheet aktueller Monat', icon: './img/favicon-valantic.ico' },
-          { title: 'Daily Board', url: 'https://dgtls.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/planner?from=2026-01-05&to=2026-01-11&periodType=CURRENT_WEEK&viewType=weeks', description: 'Daily Board aktueller Woche', icon: './img/favicon-valantic.ico' },
+          { title: 'Daily Board', url: 'https://dgtls.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/planner?periodType=CURRENT_WEEK&viewType=weeks&roleId=5&roleId=21&teamId=62', description: 'Daily Board aktueller Woche', icon: './img/favicon-valantic.ico' },
           { title: 'Timesheet', url: 'https://dgtls.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/my-work/week?type=LIST', description: 'Mein Timesheet der aktuellen Woche', icon: './img/favicon-valantic.ico' },
           { title: 'Planning Board', url: 'https://dgtls.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/planner?from=2026-01-05&to=2026-01-11&periodType=CURRENT_WEEK&viewType=weeks&roleId=5&roleId=21', description: 'Planning Board aktueller Sprint', icon: './img/favicon-valantic.ico' },
         ]
@@ -55,6 +55,7 @@ export const LINKS_DATA: Category[] = [
     category: 'Tools',
     items: [
       { title: 'Google Maps', url: 'https://maps.google.com', description: 'Google Maps' },
+      { title: 'Mapy.cz', url: 'https://mapy.cz', description: 'Mapy.cz - Czech map' },
     ],
     subcategories: [
       {
@@ -247,6 +248,20 @@ export const LINKS_DATA: Category[] = [
       }
     ]
   },
+  // Allianz Social Media Campus
+  {
+    category: 'Allianz Social Media Campus',
+    items: [
+      { title: 'Ticket Board', url: 'https://dgtls.atlassian.net/jira/software/c/projects/AZSOMECAMP/boards/4453', description: 'Ticket Board intern AZSOMECAMP' },
+      { title: 'MVP Confluence', url: '', description: '' }
+    ],
+    subcategories: [
+      {
+        name: 'Production',
+        items: []
+      },
+    ]
+  },
   // Caritas
   {
     category: 'Caritas',
@@ -311,6 +326,7 @@ export const LINKS_DATA: Category[] = [
           { title: 'Bring Einkaufsliste', url: 'https://web.getbringbring.com', description: 'Bring Einkaufsliste' },
           { title: 'Idealo', url: 'https://idealo.de', description: 'Idealo - Price comparison' },
           { title: 'Alternate', url: 'https://alternate.de', description: 'Alternate - Electronics' },
+          { title: 'Galaxus', url: 'https://galaxus.de', description: 'Galaxus - Online Shop' },
         ]
       }
     ]
