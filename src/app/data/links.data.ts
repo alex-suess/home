@@ -191,7 +191,9 @@ export const LINKS_DATA: Category[] = [
   // Schönklinik
   {
     category: 'Schönklinik',
-    items: [],
+    items: [ 
+      { title: 'Schönklinik Gitlab', url: 'https://gitlab.sk-ad.de', description: 'Schönklinik Gitlab' },
+    ],
   },
   // WTS
   {
