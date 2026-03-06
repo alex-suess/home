@@ -1,14 +1,36 @@
-<nav class="quick-nav" aria-label="Category navigation">
-  @for (categoryName of categoryNames(); track trackCategory($index, categoryName)) {
-    <button
-      type="button"
-      class="quick-nav-item"
-      [class.active]="isActive(categoryName)"
-      [attr.aria-current]="isActive(categoryName) ? 'true' : null"
-      (click)="scrollToCategory(categoryName, $index)"
-      (keydown)="onKeydown($event, categoryName, $index)"
-    >
-      {{ categoryName }}
-    </button>
-  }
-</nav>
+<div class="quick-nav-shell">
+  <button
+    type="button"
+    class="quick-nav-toggle"
+    [attr.aria-expanded]="isMenuOpen()"
+    aria-controls="quick-nav-menu"
+    (click)="toggleMenu()"
+  >
+    <span>Categories</span>
+    <span class="burger-icon" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+  </button>
+
+  <nav
+    id="quick-nav-menu"
+    class="quick-nav"
+    [class.mobile-open]="isMenuOpen()"
+    aria-label="Category navigation"
+  >
+    @for (categoryName of categoryNames(); track trackCategory($index, categoryName)) {
+      <button
+        type="button"
+        class="quick-nav-item"
+        [class.active]="isActive(categoryName)"
+        [attr.aria-current]="isActive(categoryName) ? 'true' : null"
+        (click)="scrollToCategory(categoryName, $index)"
+        (keydown)="onKeydown($event, categoryName, $index)"
+      >
+        {{ categoryName }}
+      </button>
+    }
+  </nav>
+</div>

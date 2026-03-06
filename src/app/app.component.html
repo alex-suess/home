@@ -3,25 +3,12 @@
 
 <main class="min-h-screen pattern-bg">
   <!-- Quick Navigation -->
-  <app-quick-nav />
+  <div class="fixed top-0 left-0 right-0 z-50">
+    <app-quick-nav />
+  </div>
   
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-    <!-- Header with entrance animation -->
-    <header class="header-section text-center mb-12 animate-in" style="animation-delay: 0.05s">
-      <h1 class="font-outfit text-4xl md:text-5xl font-bold text-charcoal mb-3 tracking-tight">
-        {{ title }}
-      </h1>
-      <p class="text-charcoal/60 font-karla text-lg">
-        Press 
-        <kbd class="kbd-key">Ctrl</kbd> 
-        <span class="text-charcoal/40">+</span> 
-        <kbd class="kbd-key">/</kbd> 
-        to search
-      </p>
-      <div class="mt-4 text-sm text-charcoal/40 font-karla">
-        {{ totalLinks() }} links across {{ totalCategories() }} categories
-      </div>
-    </header>
+  
+  <div class="px-4 sm:px-6 lg:px-8 py-12">
     
     <!-- Category Sections -->
     @for (category of categories(); track trackCategory($index, category)) {
@@ -38,7 +25,7 @@
   </div>
   
   <!-- Footer -->
-  <footer class="footer-section text-center py-8 text-charcoal/30 text-sm font-karla animate-in" style="animation-delay: 0.3s">
+  <footer class="footer-section fixed bottom-2 right-2 rounded-lg text-center px-8 py-8 text-charcoal/30 text-sm font-karla animate-in backdrop-blur-xl" style="animation-delay: 0.3s">
     <p>Built with Angular 19 · Press <kbd class="kbd-key-small">Ctrl</kbd> + <kbd class="kbd-key-small">/</kbd> anywhere to search</p>
   </footer>
 </main>

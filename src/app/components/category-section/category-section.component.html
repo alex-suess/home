@@ -10,7 +10,7 @@
 
   <!-- Direct Items Grid -->
   @if (hasDirectItems()) {
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
       @for (link of category().items; track trackLink($index, link)) {
         <app-link-card 
           [link]="link"
@@ -31,7 +31,7 @@
         </h3>
         
         <!-- Subcategory Items Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
           @for (link of subcategory.items; track trackLink($index, link); let linkIdx = $index) {
             <app-link-card 
               [link]="link"

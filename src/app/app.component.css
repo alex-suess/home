@@ -52,6 +52,5 @@
 
 /* Footer section */
 .footer-section {
-  border-top: 1px solid rgba(201, 112, 95, 0.1);
-  background: linear-gradient(180deg, transparent, rgba(245, 235, 224, 0.3));
+  background: linear-gradient(90 deg, transparent, rgba(245, 235, 224, 0.3));
 }

@@ -30,6 +30,8 @@ export class QuickNavComponent implements OnInit, OnDestroy {
 
   /** Currently active category (based on scroll position) */
   readonly activeCategory = signal<string | null>(null);
+  /** Mobile menu open state */
+  readonly isMenuOpen = signal(false);
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
@@ -117,6 +119,10 @@ export class QuickNavComponent implements OnInit, OnDestroy {
           firstLink.focus();
         }
       }, 500);
+
+      if (this.isMobileViewport()) {
+        this.closeMenu();
+      }
     }
   }
 
@@ -128,6 +134,19 @@ export class QuickNavComponent implements OnInit, OnDestroy {
       event.preventDefault();
       this.scrollToCategory(categoryName, index);
     }
+  }
+
+  toggleMenu(): void {
+    this.isMenuOpen.update((value) => !value);
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen.set(false);
+  }
+
+  private isMobileViewport(): boolean {
+    if (!isPlatformBrowser(this.platformId)) return false;
+    return window.innerWidth < 768;
   }
 
   /**
