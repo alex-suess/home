@@ -20,7 +20,8 @@
       var redirect = sessionStorage.redirect;
       delete sessionStorage.redirect;
       if (redirect && redirect !== location.href) {
-        history.replaceState(null, null, redirect);
+        // Ensure restored route is absolute to avoid "/home/home/..." on GitHub Pages.
+        history.replaceState(null, null, '/' + redirect.replace(/^\/+/, ''));
       }
     })();
   </script>
