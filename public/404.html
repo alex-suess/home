@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // Single Page Apps for GitHub Pages
+    // https://github.com/rafgraph/spa-github-pages
+    // This script handles SPA routing on GitHub Pages by storing the current
+    // path in sessionStorage and redirecting to the root, where index.html
+    // will restore the path and use client-side routing.
+    (function() {
+      var pathSegmentsToKeep = 1; // Keep '/home' segment
+      var l = window.location;
+      sessionStorage.redirect = l.pathname.slice(1) + l.search + l.hash;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/'
+      );
+    })();
+  </script>
+</head>
+<body>
+  <noscript>
+    <p>JavaScript is required for this page to work properly.</p>
+    <p><a href="/home/">Return to home</a></p>
+  </noscript>
+</body>
+</html>
