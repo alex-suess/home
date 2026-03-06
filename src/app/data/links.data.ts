@@ -32,9 +32,9 @@ export const LINKS_DATA: Category[] = [
         name: 'Tempo',
         items: [
           { title: 'DB Timesheet', url: 'https://dgtls.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/teams/team/62/timesheet?columns=TOTAL_TIME_COLUMN&dateDisplayType=days&excludeInternalIssues=false&from=2024-12-01&groupBy=worker&includeRejectedRecords=false&includeSubtasks=false&periodType=CURRENT_PERIOD&showUsersWithZeroHours=true&subPeriodType=MONTH&teamId=62&to=2024-12-31&viewType=TIMESHEET', description: 'DB Timesheet aktueller Monat', icon: './img/favicon-valantic.ico' },
-          { title: 'Daily Board', url: 'https://dgtls.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/planner?periodType=CURRENT_WEEK&viewType=weeks&roleId=5&roleId=21&teamId=62', description: 'Daily Board aktueller Woche', icon: './img/favicon-valantic.ico' },
+          { title: 'Daily Board', url: 'https://dgtls.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/planner?periodType=CURRENT_WEEK&viewType=weeks&roleId=5&roleId=21&teamId=62', description: 'Daily Board Databees aktuelle Woche', icon: './img/favicon-valantic.ico' },
           { title: 'Timesheet', url: 'https://dgtls.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/my-work/week?type=LIST', description: 'Mein Timesheet der aktuellen Woche', icon: './img/favicon-valantic.ico' },
-          { title: 'Planning Board', url: 'https://dgtls.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/planner?periodType=CURRENT_WEEK&viewType=weeks&roleId=5&roleId=21&teamId=62', description: 'Planning Board aktueller Sprint', icon: './img/favicon-valantic.ico' },
+          { title: 'Planning Board', url: 'https://dgtls.atlassian.net/plugins/servlet/ac/io.tempo.jira/tempo-app#!/planner?periodType=CURRENT_WEEK&viewType=weeks&roleId=5&roleId=21&teamId=62', description: 'Planning Board Databees aktueller Sprint', icon: './img/favicon-valantic.ico' },
         ]
       }
     ]
