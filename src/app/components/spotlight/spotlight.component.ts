@@ -246,7 +246,7 @@ export class SpotlightComponent implements OnInit, OnDestroy {
   @HostListener('document:keydown', ['$event'])
   onGlobalKeydown(event: KeyboardEvent): void {
     // Ctrl + / or Ctrl + k to toggle spotlight
-    if (event.ctrlKey && event.key === '/' || event.key === 'k') {
+    if (event.ctrlKey && event.key === '/' || event.ctrlKey && event.key === 'k') {
       event.preventDefault();
       this.toggle();
       return;
