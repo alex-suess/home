@@ -130,6 +130,12 @@ export class SpotlightComponent implements OnInit, OnDestroy {
 
   /** Close the spotlight */
   close(): void {
+    // Prevent pending debounced input from restoring stale query after close.
+    if (this.debounceTimeout) {
+      clearTimeout(this.debounceTimeout);
+      this.debounceTimeout = null;
+    }
+
     this.isOpen.set(false);
     this.query.set('');
     this.selectedIndex.set(0);

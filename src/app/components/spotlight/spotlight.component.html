@@ -25,6 +25,7 @@
       class="spotlight-input"
       placeholder="Search links..."
       autocomplete="off"
+      [value]="query()"
       (input)="onInputChange($event)"
       (keydown)="onInputKeydown($event)"
     />
