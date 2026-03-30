@@ -210,12 +210,18 @@ export const LINKS_DATA: Category[] = [
         ]
       },
       {
-        name: 'Staging',
-        items: []
+        name: 'Stage',
+        items: [
+          { title: 'WTS Stage Frontend', url: 'https://stage.wts.com', description: 'WTS Stage Frontend' },
+          { title: 'WTS Stage Backend', url: 'https://stage.wts.com/admin', description: 'WTS Stage Backend' },
+        ]
       },
       {
         name: 'Test',
-        items: []
+        items: [
+          { title: 'WTS Test Frontend', url: 'https://test.wts.com', description: 'WTS Test Frontend' },
+          { title: 'WTS Test Backend', url: 'https://test.wts.com/admin', description: 'WTS Test Backend' },
+        ]
       },
       {
         name: 'Development',
@@ -261,6 +267,16 @@ export const LINKS_DATA: Category[] = [
       {
         name: 'Production',
         items: []
+      },
+      {
+        name: 'Stage',
+        items: []
+      },
+      {
+        name: 'Test',
+        items: [
+           { title: 'Test Frontend', url: 'https://inno-dev.allianz.de/somecamp/#/', description: 'Test Allianz Social Media Campus Frontend' },
+        ]
       },
     ]
   },
@@ -316,6 +332,7 @@ export const LINKS_DATA: Category[] = [
           { title: 'TechCrunch', url: 'https://techcrunch.com', description: 'Startup news' },
           { title: 'The Verge', url: 'https://theverge.com', description: 'Tech & culture' },
           { title: 'Medium', url: 'https://medium.com', description: 'Articles' },
+          { title: 'dev.daily', url: 'https://app.dev.daily', description: 'dev.daily News overview' },
         ]
       },
       {
