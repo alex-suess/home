@@ -332,9 +332,9 @@ export const LINKS_DATA: Category[] = [
           { title: 'TechCrunch', url: 'https://techcrunch.com', description: 'Startup news' },
           { title: 'The Verge', url: 'https://theverge.com', description: 'Tech & culture' },
           { title: 'Medium', url: 'https://medium.com', description: 'Articles' },
-          { title: 'dev.daily', url: 'https://app.dev.daily', description: 'dev.daily News overview' },
+          { title: 'daily.dev', url: 'https://app.daily.dev', description: 'daily.dev News overview' },
         ]
-      },
+      },  
       {
         name: 'Shopping',
         items: [
