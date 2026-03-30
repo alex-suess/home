@@ -54,3 +54,54 @@
 .footer-section {
   background: linear-gradient(90 deg, transparent, rgba(245, 235, 224, 0.3));
 }
+
+.footer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.bookmark-export-btn {
+  border: 1px solid rgba(201, 112, 95, 0.35);
+  background: rgba(253, 248, 243, 0.96);
+  color: var(--color-charcoal, #2D2D2D);
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  font-family: 'Karla', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(45, 45, 45, 0.1);
+  transition: all 0.2s ease;
+}
+
+.bookmark-export-btn:hover {
+  background: var(--color-sand, #F5EBE0);
+  border-color: var(--color-terracotta, #C9705F);
+  box-shadow: 0 4px 12px rgba(45, 45, 45, 0.14);
+}
+
+.bookmark-export-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(201, 112, 95, 0.2);
+}
+
+@media (max-width: 767px) {
+  .footer-actions {
+    left: 0.75rem;
+    right: 0.75rem;
+    align-items: stretch;
+  }
+
+  .bookmark-export-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+}
